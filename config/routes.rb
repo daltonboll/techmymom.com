@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations', sessions: "users/sessions" }
+
+  # For users index working with devise - must come after devise_for
+  resources :users, only: [:index]
   resources :tutorials
 
   root 'pages#home'
