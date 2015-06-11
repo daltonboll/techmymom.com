@@ -28,6 +28,9 @@ gem 'bootstrap-sass', '~> 3.3.4'
 # Automatically add proper vendor prefixes to compiled CSS
 gem 'autoprefixer-rails'
 
+# Annotate model files
+gem 'annotate', '~> 2.6.6'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

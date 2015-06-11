@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: tutorials
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  content    :text
+#  date       :datetime
+#  videoURL   :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Tutorial < ActiveRecord::Base
   # TO ADD
   # -Category (has many tutorials)
