@@ -1,2 +1,380 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+/* mixins, variables, etc. */
+$twitter-color: #58ACEB;
+$linkedin-color: #2E8DD7;
+$facebook-color: #4965A0;
+$googleplus-color: #DD4B39;
+$github-color: #323131;
+
+$washed-gray-dark: #4A4F4E;
+$mint-green: #13b8a6;
+$mint-green-light: #13e7d0;
+$mint-gray: #EFF2F3;
+
+$fancy-font: sans-serif;
+
+/* universal */
+body {
+  font-family: $fancy-font;
+}
+
+.container {
+  font-family: $fancy-font;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+  height: 120px;
+  width: 80%;
+  background-color: #FAFAFA;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  line-height: 1.2em;
+}
+
+input {
+  background-color: #FAFAFA;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+.center {
+  text-align: center;
+  
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+#content {
+  overflow: auto;
+  background-color: white;
+  margin: auto;
+  margin-bottom: 20px;
+  height: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.padded-content > h1, h2, h3, h4, h5, h6 {
+  color: black;
+}
+
+.padded-content {
+  padding-left: 12%;
+  padding-right: 12%;
+  text-align: left;
+}
+
+hr {
+  border-width: 3px 0;
+  width: 80%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $fancy-font;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.resume-subheading {
+  margin-bottom: 5px;
+}
+
+.resume-heading {
+  margin-bottom: 10px;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 50px;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 40px;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+h3 {
+  font-size: 35px;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+h4 {
+  font-size: 30px;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+h5 {
+  font-size: 25px;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+h6 {
+  font-size: 21px;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 19px;
+  margin: 6px;
+  margin-bottom: 20px;
+}
+
+li {
+  font-size: 19px;
+}
+
+a {
+  color: $mint-green;
+  font-weight: bold;
+
+  &:hover {
+    color: $mint-green-light;
+  }
+}
+
+/* images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.center-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pad-image {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+/* tabs */
+.nav-tabs > li > a:hover {
+  background-color: $mint-gray;
+}
+
+
+/* header */
+#logo {
+  float: left;
+  margin-right: 10px;
+  margin-left: 10px;
+  color: white;
+  padding-top: 9px;
+  padding-bottom: 10px;
+}
+
+.navbar {
+  background-color: $washed-gray-dark;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  font-family: $fancy-font;
+  color: white;
+  font-size: 22px;
+  font-weight: normal;
+  padding-top: 17px;
+  padding-bottom: 12px;
+  padding-right: 13px;
+  padding-left: 13px;
+  
+  &:hover {
+    border: none;
+    border-bottom: thick solid $mint-green;
+  }
+}
+
+.navbar-inverse .navbar-nav > .active-page > a,
+.navbar-inverse .navbar-nav > .active-page > a:hover,
+.navbar-inverse .navbar-nav > .active-page > a:focus {
+  border: none;
+  border-bottom: thick solid $mint-green;
+  background: none;
+  background-color: transparent;
+}
+
+/* about page */
+.info-box {
+  margin: auto;
+}
+
+#personal-photo {
+  margin: 5px;
+}
+
+.social-links {
+  margin: 5px;
+  margin-bottom: 10px;
+}
+
+.social-button > a:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.social-twitter {
+  color: $twitter-color;
+}
+
+.social-facebook {
+  color: $facebook-color;
+}
+
+.social-googleplus {
+  color: $googleplus-color;
+}
+
+.social-linkedin {
+  color: $linkedin-color;
+}
+
+.social-github {
+  color: $github-color;
+}
+
+/* buttons */
+.pretty-button {
+  background-color: $mint-green;
+  border: 2px solid white;
+  box-sizing: border-box;
+  color: white;
+
+  &:hover {
+    background-color: $mint-green-light;
+    color:white;
+    border: 2px solid white;
+  }
+}
+
+/* contact page */
+.contact-input {
+  width: 80%;
+  line-height: 2.5em;
+}
+
+.red {
+  color: red;
+}
+
+/* comments */
+date {
+  font-size: 11px;
+  color: gray;
+}
+
+/* footer */
+#footer-bar {
+  height: 110px;
+  bottom: 0;
+  width: 100%;
+  padding-top: 5px;
+  color: white;
+  background-color: $washed-gray-dark;
+
+  p {
+    padding: 0px;
+    margin: 0px;
+  }
+}
+
+#social-box {
+  color: white;
+  margin: auto;
+  position: relative;
+  background-image: url(https://s3-us-west-2.amazonaws.com/techmymom/green-transparent.png);
+  width: 100%;
+  display: inline-block;
+
+  h1, h2, h3, h4, h5, h6 {
+    /* when we are using small screens, center text */
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
+    color: white;
+    text-align: right;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  
+    li {
+      @media screen and (max-width: 768px) {
+        float: none;
+      }
+      display: inline;
+      float: left;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
+}
+
+.hidden-social-header {
+  //text-align: center !important;
+}
+
+.hidden-social-links {
+  float: none !important;
+}
+
+.social-box-button > ul > li > a {
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.9;
+    text-decoration: none;
+  }
+}
