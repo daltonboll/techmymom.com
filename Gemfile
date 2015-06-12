@@ -32,6 +32,8 @@ gem 'autoprefixer-rails'
 gem 'annotate', '~> 2.6.6'
 # Use devise for user authentication
 gem 'devise'
+# Use cancancan for authorization
+gem 'cancancan', '~> 1.10'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
