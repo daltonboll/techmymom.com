@@ -18,7 +18,7 @@
       <% @tutorials.each do |tutorial| %>
         <tr>
           <td><%= tutorial.title %></td>
-          <td><%= tutorial.content %></td>
+          <td><%= simple_format(tutorial.content) %></td>
           <td><%= tutorial.date %></td>
           <td><%= tutorial.videoURL %></td>
           <td><%= link_to 'Show', tutorial %></td>
