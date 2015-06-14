@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # used for authorization, role is a column in the users table
   enum role: ["admin", "user"]
-  
+
 end
