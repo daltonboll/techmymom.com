@@ -19,5 +19,6 @@ class Tutorial < ActiveRecord::Base
   # -Videos (videos belong to a tutorial)
 
   belongs_to :user
+  belongs_to :category
   
 end
