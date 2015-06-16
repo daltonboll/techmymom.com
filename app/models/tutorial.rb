@@ -14,9 +14,7 @@
 #
 
 class Tutorial < ActiveRecord::Base
-  # TO ADD
-  # -Tags (tutorial has many tags?? and/or tags have many tutorials)
-
+  
   belongs_to :user
   belongs_to :category
   has_one :video
