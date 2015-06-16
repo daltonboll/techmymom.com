@@ -10,8 +10,8 @@ puts "Seeding the database..."
 
 # Initialize Users
 users = {
-  admin => User.create(name: 'Dalton Boll', email: 'daltonboll@gmail.com', password: 'password', role: 0),
-  user1 => User.create(name: 'John Doe', email: 'jdoe@gmail.com', password: 'password')
+  :admin => User.create(name: 'Dalton Boll', email: 'daltonboll@gmail.com', password: 'password', role: 0),
+  :user1 => User.create(name: 'John Doe', email: 'jdoe@gmail.com', password: 'password')
 }
 
 
@@ -23,7 +23,7 @@ windows8_title = "Introduction to Windows 8"
 
 tutorials = {
   :keyboard => Tutorial.create(title: keyboard_title, content: keyboard_text, published: Time.now),
-  :windows8_intro => Tutorial.create(title: windows8_title, content: windows8_text, published: Time.now),
+  :windows8 => Tutorial.create(title: windows8_title, content: windows8_text, published: Time.now),
 }
 
 
@@ -76,16 +76,18 @@ keyboard_tutorial = tutorials[:keyboard]
 windows8_tutorial = tutorials[:windows8]
 
 # Set admin as the author for each tutorial
-tutorials.each do |tutorial|
+tutorials.each do |name, tutorial|
   tutorial.user = admin
   tutorial.save
 end
 
 # Set Tutorial Categories
-keyboard_tutorial.category = categories[:general]
-keyboard_tutorial.save
-windows8_tutorial.category = categories[:windows8]
-windows8_tutorial.save
+general_cat = categories[:general]
+general_cat.tutorials << keyboard_tutorial
+general_cat.save
+windows8_cat = categories[:windows8]
+windows8_cat.tutorials << windows8_tutorial
+windows8_cat.save
 
 # Set Tutorial Tags
 keyboard_tutorial.tags << tags[:intro]
@@ -104,12 +106,12 @@ windows8_tutorial.video = videos[:windows8]
 windows8_tutorial.save
 
 # Set Tutorial Comments
-keyboard_comments.each do |comment|
+keyboard_comments.each do |key, comment|
   comment.tutorial = keyboard_tutorial
   comment.save
 end
 
-windows8_comments.each do |comment|
+windows8_comments.each do |key, comment|
   comment.tutorial = windows8_tutorial
   comment.save
 end
