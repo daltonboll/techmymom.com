@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :videos
+
   resources :categories
 
   devise_for :users, :controllers => { registrations: 'registrations', sessions: "users/sessions" }
