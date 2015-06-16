@@ -27,4 +27,6 @@ class User < ActiveRecord::Base
   # used for authorization, role is a column in the users table
   enum role: ["admin", "user"]
 
+  has_many :tutorials
+
 end
