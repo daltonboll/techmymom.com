@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :categories
+
   devise_for :users, :controllers => { registrations: 'registrations', sessions: "users/sessions" }
 
   # For users index working with devise - must come after devise_for
