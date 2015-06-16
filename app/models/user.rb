@@ -16,6 +16,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  name                   :string
+#  role                   :integer          default(1), not null
 #
 
 class User < ActiveRecord::Base
