@@ -21,5 +21,6 @@ class Tutorial < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   has_one :video
+  has_many :comments
   
 end
