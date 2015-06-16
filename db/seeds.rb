@@ -14,6 +14,6 @@ keyboard_text = "Here's some text on how to use the keyboard properly!\nMore to 
 windows8_text = "Let's dive right into Windows 8!\nMore coming soon."
 
 tutorials = {
-  :using_keyboard => Tutorial.create(title: 'How to properly use the keyboard', content: keyboard_text, password: 'password', is_admin: true),
+  :using_keyboard => Tutorial.create(title: 'How to properly use the keyboard', content: keyboard_text, published: Time.now, ),
   :windows8_intro => User.create(name: 'Dalton', email: 'dalton@mail.com', password: 'password', is_admin: true),
  }
