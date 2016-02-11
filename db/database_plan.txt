@@ -1,0 +1,80 @@
+User:
+----------
+:has_secure_password
+:has_many Courses
+:has_many Tutorials
+
+username string
+email string
+name string
+password string
+password_confirmation string
+role integer (default 1)
+
+
+
+Course:
+-----------
+:has_many Tutorials
+:belongs_to Category
+:has_and_belongs_to_many Tags
+:belongs_to User
+
+title string
+
+
+
+Tutorial:
+-----------
+:belongs_to Course
+:belongs_to User
+:has_and_belongs_to_many Tags
+:has_one Video
+:has_many Comments
+
+title string
+published datetime
+content string
+
+
+
+Category:
+------------
+:has_many Courses
+
+description string
+name string
+
+
+
+Tag:
+------------
+:has_and_belongs_to_many Tutorials
+:has_and_belongs_to_many Courses
+
+name string
+
+
+Video:
+----------
+:belongs_to Tutorial
+
+title string
+description string
+url string
+views integer (default 0)
+
+
+
+Comment:
+------------
+:belongs_to Tutorial
+:belongs_to User
+
+text :string
+upvotes integer (default 0)
+downvotes integer (default 0)
+
+
+
+
